@@ -1,0 +1,20 @@
+module mux(IN0 ,IN1,SEL ,OUT );
+
+
+input [7:0] IN0 ,IN1;
+input SEL;
+
+output [7:0] OUT ;
+reg  [7:0] OUT ;
+
+
+always @(SEL or IN0  or IN1)
+begin
+case (SEL )
+0 : OUT  = IN0 ;
+1 : OUT  = IN1 ;
+default : OUT  = {8{1'bz}};
+endcase
+end
+
+endmodule 

@@ -1,0 +1,10 @@
+Fitter Status : Successful - Tue Jul 01 18:00:47 2014
+Quartus II Version : 8.1 Build 163 10/28/2008 SJ Full Version
+Revision Name : CPU_Prototype_MKII
+Top-level Entity Name : CPU_Prototype_MKII
+Family : FLEX10K
+Device : EPF10K20TC144-3
+Timing Models : Final
+Total logic elements : 543 / 1,152 ( 47 % )
+Total pins : 97 / 102 ( 95 % )
+Total memory bits : 2,048 / 12,288 ( 17 % )

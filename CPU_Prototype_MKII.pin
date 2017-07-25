@@ -1,0 +1,187 @@
+ -- Copyright (C) 1991-2008 Altera Corporation
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and its AMPP partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, Altera MegaCore Function License 
+ -- Agreement, or other applicable license agreement, including, 
+ -- without limitation, that your use is for the sole purpose of 
+ -- programming logic devices manufactured by Altera and sold by 
+ -- Altera or its authorized distributors.  Please refer to the 
+ -- applicable agreement for further details.
+ -- 
+ -- This is a Quartus II output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus II input file. This file cannot be used
+ -- to make Quartus II pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus II help.
+ ------------------------------------------------------------------------------
+
+
+
+ ------------------------------------------------------------------------------
+ -- NC         : No Connect. This pin has no internal connection to the device.
+ -- VCC_INT    : Dedicated power pin, which MUST be connected to VCC  (5.0V).
+ -- VCC_IO     : Dedicated power pin, which MUST be connected to VCC  (Refer to
+ --              the table below for voltage).
+ -- GND        : Dedicated ground pin, which MUST be connected to GND.
+ -- GND+       : Unused input. This pin should be connected to GND. It may also
+ --              be connected  to a  valid signal  on the board  (low, high, or
+ --              toggling)  if that signal is required for a different revision
+ --              of the design.
+ -- GND*       : Unused  I/O  pin.   This pin can either be left unconnected or
+ --              connected to GND.  Connecting this pin to GND will improve the
+ --              device's immunity to noise.
+ ------------------------------------------------------------------------------
+
+
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Full Version
+CHIP  "CPU_Prototype_MKII"  ASSIGNED TO AN: EPF10K20TC144-3
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+TCK                          : 1         : input  :                   :         :           :                
+CONF_DONE                    : 2         : bidir  :                   :         :           :                
+nCEO                         : 3         : output :                   :         :           :                
+TDO                          : 4         : output :                   :         :           :                
+VCC_IO                       : 5         : power  :                   : 5.0V    :           :                
+VCC_INT                      : 6         : power  :                   : 5.0V    :           :                
+MEMDBUS[1]                   : 7         : output : TTL               :         :           : N              
+IBUS-OUT[6]                  : 8         : output : TTL               :         :           : N              
+MEMDBUS[7]                   : 9         : output : TTL               :         :           : N              
+IBUS-OUT[0]                  : 10        : output : TTL               :         :           : N              
+R-IBUS                       : 11        : output : TTL               :         :           : N              
+IBUS-OUT[1]                  : 12        : output : TTL               :         :           : N              
+IBUS-OUT[7]                  : 13        : output : TTL               :         :           : N              
+PCLK                         : 14        : output : TTL               :         :           : N              
+GND_IO                       : 15        : gnd    :                   :         :           :                
+GND_INT                      : 16        : gnd    :                   :         :           :                
+IBUS-OUT[5]                  : 17        : output : TTL               :         :           : N              
+MEMDBUS[3]                   : 18        : output : TTL               :         :           : N              
+MEMDBUS[5]                   : 19        : output : TTL               :         :           : N              
+MEMDBUS[15]                  : 20        : output : TTL               :         :           : N              
+MEMDBUS[2]                   : 21        : output : TTL               :         :           : N              
+MEM_ADR[5]                   : 22        : output : TTL               :         :           : N              
+MEMDBUS[6]                   : 23        : output : TTL               :         :           : N              
+VCC_IO                       : 24        : power  :                   : 5.0V    :           :                
+VCC_INT                      : 25        : power  :                   : 5.0V    :           :                
+tdb[9]                       : 26        : output : TTL               :         :           : N              
+tdb[4]                       : 27        : output : TTL               :         :           : N              
+tdb[3]                       : 28        : output : TTL               :         :           : N              
+tdb[6]                       : 29        : output : TTL               :         :           : N              
+tdb[1]                       : 30        : output : TTL               :         :           : N              
+CN                           : 31        : output : TTL               :         :           : N              
+RE                           : 32        : output : TTL               :         :           : N              
+WE                           : 33        : output : TTL               :         :           : N              
+TMS                          : 34        : input  :                   :         :           :                
+nSTATUS                      : 35        : bidir  :                   :         :           :                
+IBUS-MAR                     : 36        : output : TTL               :         :           : N              
+CLK                          : 37        : output : TTL               :         :           : N              
+EXC0                         : 38        : output : TTL               :         :           : N              
+T0                           : 39        : output : TTL               :         :           : N              
+GND_IO                       : 40        : gnd    :                   :         :           :                
+W-B-C                        : 41        : output : TTL               :         :           : N              
+CPC                          : 42        : output : TTL               :         :           : N              
+IBUS-PC                      : 43        : output : TTL               :         :           : N              
+CPMDR                        : 44        : output : TTL               :         :           : N              
+VCC_IO                       : 45        : power  :                   : 5.0V    :           :                
+IBUS-OUT[13]                 : 46        : output : TTL               :         :           : N              
+DST0                         : 47        : output : TTL               :         :           : N              
+SRC                          : 48        : output : TTL               :         :           : N              
+tdb[10]                      : 49        : output : TTL               :         :           : N              
+GND_IO                       : 50        : gnd    :                   :         :           :                
+tdb[0]                       : 51        : output : TTL               :         :           : N              
+VCC_INT                      : 52        : power  :                   : 5.0V    :           :                
+VCC_INT                      : 53        : power  :                   : 5.0V    :           :                
+GND+                         : 54        :        :                   :         :           :                
+INCLK                        : 55        : input  : TTL               :         :           : N              
+GND+                         : 56        :        :                   :         :           :                
+GND_INT                      : 57        : gnd    :                   :         :           :                
+GND_INT                      : 58        : gnd    :                   :         :           :                
+IBUS-OUT[2]                  : 59        : output : TTL               :         :           : N              
+IBUS-OUT[10]                 : 60        : output : TTL               :         :           : N              
+VCC_IO                       : 61        : power  :                   : 5.0V    :           :                
+IBUS-OUT[11]                 : 62        : output : TTL               :         :           : N              
+SRC0                         : 63        : output : TTL               :         :           : N              
+MEM_ADR[1]                   : 64        : output : TTL               :         :           : N              
+MEM_ADR[2]                   : 65        : output : TTL               :         :           : N              
+GND_IO                       : 66        : gnd    :                   :         :           :                
+MEM_ADR[6]                   : 67        : output : TTL               :         :           : N              
+WRE                          : 68        : output : TTL               :         :           : N              
+H-L-C                        : 69        : output : TTL               :         :           : N              
+BHE                          : 70        : output : TTL               :         :           : N              
+VCC_IO                       : 71        : power  :                   : 5.0V    :           :                
+PC-IBUS                      : 72        : output : TTL               :         :           : N              
+M                            : 73        : output : TTL               :         :           : N              
+nCONFIG                      : 74        : input  :                   :         :           :                
+VCC_INT                      : 75        : power  :                   : 5.0V    :           :                
+MSEL1                        : 76        : input  :                   :         :           :                
+MSEL0                        : 77        : input  :                   :         :           :                
+MOD                          : 78        : output : TTL               :         :           : N              
+S3                           : 79        : output : TTL               :         :           : N              
+EXC                          : 80        : output : TTL               :         :           : N              
+IBUS-OUT[15]                 : 81        : output : TTL               :         :           : N              
+MEM_ADR[4]                   : 82        : output : TTL               :         :           : N              
+tdb[5]                       : 83        : output : TTL               :         :           : N              
+GND_INT                      : 84        : gnd    :                   :         :           :                
+GND_IO                       : 85        : gnd    :                   :         :           :                
+tdb[11]                      : 86        : output : TTL               :         :           : N              
+tdb[8]                       : 87        : output : TTL               :         :           : N              
+MEMDBUS[9]                   : 88        : output : TTL               :         :           : N              
+S0                           : 89        : output : TTL               :         :           : N              
+MEMDBUS[12]                  : 90        : output : TTL               :         :           : N              
+CPSA                         : 91        : output : TTL               :         :           : N              
+MEM_ADR[3]                   : 92        : output : TTL               :         :           : N              
+VCC_INT                      : 93        : power  :                   : 5.0V    :           :                
+VCC_IO                       : 94        : power  :                   : 5.0V    :           :                
+MEMDBUS[11]                  : 95        : output : TTL               :         :           : N              
+WR                           : 96        : output : TTL               :         :           : N              
+MEMDBUS[13]                  : 97        : output : TTL               :         :           : N              
+MEMDBUS[10]                  : 98        : output : TTL               :         :           : N              
+IBUS-OUT[9]                  : 99        : output : TTL               :         :           : N              
+MEMDBUS[8]                   : 100       : output : TTL               :         :           : N              
+MEMDBUS[4]                   : 101       : output : TTL               :         :           : N              
+RD                           : 102       : output : TTL               :         :           : N              
+GND_INT                      : 103       : gnd    :                   :         :           :                
+GND_IO                       : 104       : gnd    :                   :         :           :                
+TDI                          : 105       : input  :                   :         :           :                
+nCE                          : 106       : input  :                   :         :           :                
+DCLK                         : 107       : bidir  :                   :         :           :                
+DATA0                        : 108       : input  :                   :         :           :                
+tdb[2]                       : 109       : output : TTL               :         :           : N              
+REG                          : 110       : output : TTL               :         :           : N              
+ALU-IBUS                     : 111       : output : TTL               :         :           : N              
+FI0                          : 112       : output : TTL               :         :           : N              
+S1                           : 113       : output : TTL               :         :           : N              
+T1                           : 114       : output : TTL               :         :           : N              
+VCC_IO                       : 115       : power  :                   : 5.0V    :           :                
+S2                           : 116       : output : TTL               :         :           : N              
+MEMDBUS[14]                  : 117       : output : TTL               :         :           : N              
+IBUS-OUT[4]                  : 118       : output : TTL               :         :           : N              
+C-IBUS                       : 119       : output : TTL               :         :           : N              
+MEM_ADR[7]                   : 120       : output : TTL               :         :           : N              
+MEM_ADR[0]                   : 121       : output : TTL               :         :           : N              
+IBUS-OUT[14]                 : 122       : output : TTL               :         :           : N              
+VCC_INT                      : 123       : power  :                   : 5.0V    :           :                
+GND+                         : 124       :        :                   :         :           :                
+GND+                         : 125       :        :                   :         :           :                
+GND+                         : 126       :        :                   :         :           :                
+GND_INT                      : 127       : gnd    :                   :         :           :                
+IBUS-OUT[12]                 : 128       : output : TTL               :         :           : N              
+GND_IO                       : 129       : gnd    :                   :         :           :                
+FI                           : 130       : output : TTL               :         :           : N              
+MDR-IBUS                     : 131       : output : TTL               :         :           : N              
+CPPC                         : 132       : output : TTL               :         :           : N              
+RAD                          : 133       : output : TTL               :         :           : N              
+VCC_IO                       : 134       : power  :                   : 5.0V    :           :                
+IBUS-OUT[3]                  : 135       : output : TTL               :         :           : N              
+IBUS-OUT[8]                  : 136       : output : TTL               :         :           : N              
+IR0                          : 137       : output : TTL               :         :           : N              
+tdb[7]                       : 138       : output : TTL               :         :           : N              
+GND_IO                       : 139       : gnd    :                   :         :           :                
+CPSB                         : 140       : output : TTL               :         :           : N              
+CPMAR                        : 141       : output : TTL               :         :           : N              
+CPIR                         : 142       : output : TTL               :         :           : N              
+DST                          : 143       : output : TTL               :         :           : N              
+MEMDBUS[0]                   : 144       : output : TTL               :         :           : N              

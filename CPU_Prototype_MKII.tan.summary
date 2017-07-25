@@ -1,0 +1,46 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 72.600 ns
+From           : Latch_Register_16bit:inst2|74273b:inst|15
+To             : IBUS-OUT[15]
+From Clock     : INCLK
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'INCLK'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 11.90 MHz ( period = 84.000 ns )
+From           : ADR_GEN:inst5|RA
+To             : RegisterGroup_16bitX4_eq8bitX8:inst3|74670:inst9|39
+From Clock     : INCLK
+To Clock       : INCLK
+Failed Paths   : 0
+
+Type           : Clock Hold: 'INCLK'
+Slack          : Not operational: Clock Skew > Data Delay
+Required Time  : None
+Actual Time    : N/A
+From           : Counter_8bit:inst6|74161:1|f74161:sub|110
+To             : MEM_16bitX8adr_eq8bitX8adr:inst7|lpm_ram_dq0:inst3|lpm_ram_dq:lpm_ram_dq_component|altram:sram|q[7]~reg_ra2
+From Clock     : INCLK
+To Clock       : INCLK
+Failed Paths   : 4036
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 4036
+
+--------------------------------------------------------------------------------------
+

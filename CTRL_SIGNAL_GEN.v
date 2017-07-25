@@ -1,0 +1,221 @@
+module CTRL_SIGNAL_GEN(CLK,PCLK,t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,FI,SRC,DST,EXC,IR,UA,HALT0,SRC0,EXC0,DST0,FI0,T_0,T_1,REG,MOD,RAD,CPIR,IR0,CPC,H_L_C,W_B_C,C_IBUS,RE,WE,R_IBUS,S0,S1,S2,S3,M,CN,ALU_IBUS,CPSA,CPSB,CPMAR,IBUS_MAR,RD,WR,WRE,BHE,MDR_IBUS,CPMDR,CPPC,IBUS_PC,PC_IBUS);
+//Clock&Timer&Status
+input CLK,PCLK,t0,t1,t2,t3,t4,t5,t6,t7,t8,t9,t10,t11,SRC,EXC,DST,FI;
+output HALT0,SRC0,EXC0,DST0,FI0,T_0,T_1;
+reg HALT0,SRC0,EXC0,DST0,FI0,T_0,T_1;
+//ADR_GEN
+output REG,MOD,RAD;
+reg REG,MOD,RAD;
+//IR
+input [15:0]IR;
+output CPIR,IR0;
+reg CPIR,IR0;
+//FR(reg)
+reg [15:0]FR;
+//Bus_Regster
+output CPC,H_L_C,W_B_C,C_IBUS;
+reg CPC,H_L_C,W_B_C,C_IBUS;
+//Register Group
+output RE,WE,R_IBUS;
+reg RE,WE,R_IBUS;
+//ALU
+output S0,S1,S2,S3;
+output M,CN;
+output ALU_IBUS;
+output CPSA,CPSB;
+reg S0,S1,S2,S3;
+reg M,CN;
+reg ALU_IBUS;
+reg CPSA,CPSB;
+//MEM
+output CPMAR,IBUS_MAR;
+output RD,WR,WRE,BHE;
+output MDR_IBUS,CPMDR;
+reg CPMAR,IBUS_MAR;
+reg RD,WR,WRE,BHE;
+reg MDR_IBUS,CPMDR;
+//PC
+output CPPC,IBUS_PC,PC_IBUS;
+reg CPPC,IBUS_PC,PC_IBUS;
+//MEM Aligment
+
+input UA;
+
+//Commands
+reg JMPI;
+reg MOVRR;
+
+reg MOVRIW;
+reg MOVRIB;
+
+reg MOVMR;
+reg MOVRM;
+
+reg MOVBR;
+reg MOVRB;
+
+reg ADDRR;
+
+reg NOTA;
+
+
+always@(negedge FI)
+begin
+HALT0<=IR[15]*IR[14]*IR[13]*IR[12]*!IR[11]*IR[10]*!IR[9]*!IR[8];
+
+//MOVRR;
+MOVRIW<=IR[15]*!IR[14]*IR[13]*IR[12]*IR[11];
+MOVRIB<=IR[15]*!IR[14]*IR[13]*IR[12]*!IR[11];
+ADDRR<=!IR[15]*!IR[14]*!IR[13]*!IR[12]*!IR[11]*!IR[10];
+//MOVRMW<=IR[15]*!IR[14]*!IR[13]*!IR[12]*IR[11]*!IR[10]*IR[9]*IR[8];
+//MOVRMB<=IR[15]*!IR[14]*!IR[13]*!IR[12]*IR[11]*!IR[10]*IR[9]*!IR[8];
+//MOVMRW<=IR[15]*!IR[14]*!IR[13]*!IR[12]*IR[11]*!IR[10]*!IR[9]*IR[8];
+//MOVMRB<=IR[15]*!IR[14]*!IR[13]*!IR[12]*IR[11]*!IR[10]*!IR[9]*!IR[8];
+//MOVRM;
+//MOVBR;
+//MOVRB;
+JMPI<=IR[15]*IR[14]*IR[13]*!IR[12]*IR[11]*!IR[10]*IR[9]*IR[8];
+end
+
+always@(CLK or PCLK or t0 or t1 or t2 or t3 or t4 or t5 or t6 or t7 or t8 or t9 or t10 or t11 or FI or SRC or DST or EXC)
+begin
+
+//Time
+T_0<=
+ADDRR*SRC|ADDRR*DST|ADDRR*EXC|
+MOVRIW*EXC*t0|MOVRIW*DST*t1|
+JMPI*DST*t2+
+FI*t2; //FI
+
+T_1<=
+MOVRIW*DST*t0|
+JMPI*DST*t0|JMPI*DST*t1|
+FI*t0|FI*t1; //FI
+
+//Status
+FI0<=
+ADDRR*EXC*t0|
+MOVRIW*EXC*t0|
+JMPI*DST*t2|
+0;
+
+DST0<=
+FI*t2; //FI
+
+SRC0<=
+ADDRR*DST*t0;
+
+EXC0<=
+ADDRR*SRC*t0|
+MOVRIW*DST*t1;
+
+//Instructions
+
+PC_IBUS<=
+MOVRIW*DST*t0|
+JMPI*t0*DST|
+FI*t0;//FI
+
+CPSA<=
+ADDRR*DST*PCLK*t0|
+JMPI*t0*CLK*DST;
+
+CPSB<=
+ADDRR*SRC*PCLK*t0|
+JMPI*t1*CLK*DST;
+
+IBUS_PC<=
+JMPI*t2*DST|
+0;
+
+ 
+CPPC<=
+MOVRIW*DST*t1*PCLK|MOVRIW*DST*t0*PCLK|
+JMPI*t2*PCLK*DST|
+FI*t1*PCLK|FI*t2*PCLK;
+
+ALU_IBUS<=
+ADDRR*EXC*t0|
+JMPI*t2*DST;
+
+S0<=
+ADDRR*EXC|
+JMPI*DST;
+S1<=
+0;
+S2<=
+0;
+S3<=
+ADDRR*EXC|
+JMPI*DST;
+M<=
+0;
+CN<=
+ADDRR*EXC|
+JMPI*DST;
+
+IBUS_MAR<=
+MOVRIW*DST*t0*CLK|
+FI*t0*CLK;//FI
+
+WR<=
+MOVRIW*DST*t1|
+FI*t1;
+
+CPMAR<=
+MOVRIW*DST*t0*PCLK|
+FI*t0*PCLK;//FI
+
+BHE<=
+0;
+
+W_B_C<=
+0;
+
+H_L_C<=
+0;
+
+RD<=
+MOVRIW*DST*t1*CLK|
+FI*t1*CLK;//FI //FIU
+
+CPC<=
+0;
+
+C_IBUS<=
+0;//FIU
+
+CPMDR<=
+MOVRIW*DST*t1*PCLK|
+FI*t1*PCLK;//FI
+
+MDR_IBUS<=
+MOVRIW*EXC*t0|
+JMPI*t1*DST|
+FI*t2;//FI
+
+CPIR<=
+FI*t2*CLK;//FI
+
+MOD<=
+ADDRR*DST*t0;
+
+REG<=
+ADDRR*EXC*t0|
+ADDRR*SRC*t0|
+MOVRIW*EXC*t0;
+
+R_IBUS<=
+ADDRR*SRC*CLK*t0|
+ADDRR*DST*CLK*t0;
+
+RE<=
+ADDRR*DST*CLK*t0|
+ADDRR*SRC*CLK*t0;
+
+WE<=
+ADDRR*EXC*PCLK*t0|
+MOVRIW*EXC*t0*PCLK;
+
+end
+endmodule 
